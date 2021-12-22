@@ -1,0 +1,54 @@
+/* css reset and global styles */
+
+/* MOBILE STYLES */
+
+.weatherApp {
+  background-color: #fff;
+}
+.tablo {
+  text-align: center;
+  margin: 15px;
+  font-size: 25px;
+}
+.dateTime {
+  background-color: #0a1438;
+  padding: 10px;
+}
+.date {
+}
+.rain {
+  margin-right: 15px;
+}
+.dayOfTheWeek {
+  /* border: 1px solid #fff; */
+
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+.weekWeather {
+  justify-content: center;
+  display: grid;
+  font-family: "Lexend Deca";
+  font-weight: 400;
+  grid-template-columns: repeat(1, 330px);
+}
+.weatherCard {
+  display: grid;
+  grid-template-columns: 0.6fr 20px 50px 20px 50px;
+  gap: 20px;
+  /* justify-content: space-between; */
+  align-items: center;
+  margin-top: 10px;
+  /* border-radius: 30px; */
+  background-color: #414e7a;
+  color: #fff;
+  font-size: 24px;
+  /* padding: 30px; */
+}
+
+/* DESKTOP STYLES */
+@media (min-width: 800px) {
+  .weekWeather {
+    /* grid-template-columns: repeat(8, 70px); */
+  }
+}
