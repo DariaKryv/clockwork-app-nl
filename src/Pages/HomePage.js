@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import dayjs from "dayjs";
-import { FaTemperatureLow, FaCloudRain, FaMapMarkerAlt } from "react-icons/fa";
+import { FaTemperatureLow, FaUmbrella, FaMapMarkerAlt } from "react-icons/fa";
 import "./HomePage.css";
+
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 export default function HomePage() {
@@ -23,28 +24,34 @@ export default function HomePage() {
   return (
     <div className="weatherApp">
       <h1 className="tablo">
-        Amsterdam <FaMapMarkerAlt />
+        Amsterdam <FaMapMarkerAlt className="locationImg" />
       </h1>
       <div className="weekWeather">
         {!weather
           ? "Loading"
           : weather.map((weather) => {
               const dayOfTheWeek = dayjs(weather.startTime).format("ddd");
-              const date = dayjs(weather.startTime).format("DD/MM");
+              const date = dayjs(weather.startTime).format("DD/MMM");
               return (
                 <div className="weatherCard" key={weather.startTime}>
                   <div className="dateTime">
                     <p className="dayOfTheWeek">{dayOfTheWeek}</p>
                     <p className="date">{date}</p>
                   </div>
-                  <FaTemperatureLow />
-                  <p className="temperature">
-                    {weather.values.temperature.toFixed()}°C
-                  </p>
-                  <FaCloudRain />
-                  <p className="rain">
-                    {weather.values.precipitationProbability}%
-                  </p>
+                  <div className="tempItem">
+                    <p>
+                      <FaTemperatureLow className="temperatureImg" />
+                    </p>
+                    <p className="temperature">
+                      {weather.values.temperature.toFixed()}°C
+                    </p>
+                  </div>
+                  <div className="umbrellaItem">
+                    <FaUmbrella className="umbrellaImg" />
+                    <p className="rain">
+                      {weather.values.precipitationProbability}%
+                    </p>
+                  </div>
                 </div>
               );
             })}
