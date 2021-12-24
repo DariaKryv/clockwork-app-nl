@@ -12,6 +12,7 @@ export default {
   1000: Sun,
   1001: CloudSun,
   1100: CloudSun,
+  1101: CloudSun,
   1102: Cloud,
   2000: CloudFog,
   2100: CloudFog,

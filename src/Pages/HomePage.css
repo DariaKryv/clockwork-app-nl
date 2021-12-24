@@ -12,6 +12,7 @@
   );
   padding: 50px 10px 10px 10px;
 }
+
 .tablo {
   text-align: center;
   margin-right: 20%;
@@ -27,6 +28,20 @@
 }
 .locationImg:hover {
   color: rgb(196, 99, 99);
+}
+
+.weatherForToday {
+  justify-content: center;
+  display: grid;
+}
+.todayWeather {
+  color: #fff;
+}
+.todayDate {
+}
+.todayTepm {
+  font-size: 40px;
+  font-weight: 600;
 }
 
 .weekWeather {
