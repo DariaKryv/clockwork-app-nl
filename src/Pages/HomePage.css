@@ -59,9 +59,10 @@
   opacity: 0.5;
 }
 .tempItem {
+  margin-top: 5px;
   margin-left: 10px;
   display: grid;
-  grid-template-columns: repeat(2, 30px);
+  grid-template-columns: repeat(2, 40px);
 }
 .umbrellaItem {
   margin-left: 90px;
@@ -72,9 +73,14 @@
   margin-right: 30px;
 }
 .temperature {
+  margin-left: 10px;
+  margin-top: 18px;
 }
 .temperatureImg {
-  opacity: 0.3;
+  opacity: 0.35;
+  margin-top: 6px;
+  padding: 0;
+  width: 55px;
 }
 .umbrellaImg {
   opacity: 0.3;
@@ -107,12 +113,17 @@
     /* display: block; */
     margin: 0;
     margin-top: 20px;
-    justify-content: center;
+    /* justify-content: center; */
   }
   .temperatureImg {
-    margin-left: 8px;
+    margin-left: 2px;
+
+    margin-bottom: 0;
+    padding: 0;
   }
   .temperature {
+    margin-top: -20px;
+    padding: 0;
   }
 
   .umbrellaItem {
