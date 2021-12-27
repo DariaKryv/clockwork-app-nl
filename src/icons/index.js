@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import CloudDrizzle from "./Cloud-Drizzle.svg";
 import CloudFog from "./Cloud-Fog.svg";
 import CloudSun from "./Cloud-Sun.svg";
@@ -8,7 +7,7 @@ import Cloud from "./Cloud.svg";
 import Sun from "./Sun.svg";
 import Wind from "./Wind.svg";
 
-export default {
+const weatherIcons = {
   1000: Sun,
   1001: CloudSun,
   1100: CloudSun,
@@ -36,3 +35,5 @@ export default {
   7102: CloudSnow,
   8000: CloudHail,
 };
+
+export default weatherIcons;

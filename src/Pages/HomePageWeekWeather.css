@@ -22,28 +22,15 @@
   font-size: 25px;
   font-weight: 300;
 }
+.location {
+  opacity: 0;
+}
 .locationImg {
-  float: right;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 .locationImg:hover {
   color: rgb(196, 99, 99);
 }
-
-.weatherForToday {
-  justify-content: center;
-  display: grid;
-}
-.todayWeather {
-  color: #fff;
-}
-.todayDate {
-}
-.todayTepm {
-  font-size: 40px;
-  font-weight: 600;
-}
-
 .weekWeather {
   justify-content: center;
   display: grid;
@@ -52,8 +39,7 @@
 }
 .weatherCard {
   display: grid;
-  grid-template-columns: 0.6fr 20px 50px 20px 50px;
-  grid-column-gap: 20px;
+  grid-template-columns: repeat(3, 100px);
   align-items: center;
   margin-top: 5px;
   border-bottom: 1px solid rgb(63, 42, 56);
@@ -75,12 +61,11 @@
 }
 .tempItem {
   margin-top: 5px;
-  margin-left: 10px;
   display: grid;
   grid-template-columns: repeat(2, 40px);
 }
 .umbrellaItem {
-  margin-left: 90px;
+  margin-left: 50px;
   display: grid;
   grid-template-columns: repeat(2, 30px);
 }
@@ -91,6 +76,7 @@
   margin-left: 10px;
   margin-top: 18px;
 }
+
 .temperatureImg {
   opacity: 0.35;
   margin-top: 6px;
@@ -110,7 +96,6 @@
     grid-template-columns: repeat(8, 90px);
     grid-column-gap: 2px;
     justify-content: center;
-    /* margin: 0; */
   }
   .weatherCard {
     border: 1px solid rgb(63, 42, 56);
@@ -125,10 +110,8 @@
   }
   .tempItem {
     grid-template-columns: repeat(1, 40px);
-    /* display: block; */
     margin: 0;
     margin-top: 20px;
-    /* justify-content: center; */
   }
   .temperatureImg {
     margin-left: 2px;
