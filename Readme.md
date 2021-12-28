@@ -1,5 +1,5 @@
 
-    - Introduction
+    # Introduction
         - As part of the application process at Ordina I received a technical assignment to do the following: Create a weather widget for use in the webbrowser that provides the weather forecast.
           The task allowed freedom in approach and design, and is focused on assessing my skills in line withe pre-defined performance criteria. 
     - Approach
