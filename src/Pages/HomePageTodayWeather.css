@@ -13,8 +13,9 @@
   justify-content: center;
   padding-bottom: 15px;
   margin-bottom: 40px;
-  border-bottom: 1px solid rgb(51, 47, 47);
+  border-bottom: 1px solid rgba(94, 76, 88, 0.61);
   width: 330px;
+  margin-top: -40px;
 }
 .weatherForToday img {
   width: 230px;
@@ -22,11 +23,11 @@
   opacity: 0.4;
 }
 .dayAndTemp-container {
-  margin-top: -55px;
-  justify-content: center;
+  margin-top: -45px;
   display: grid;
   grid-template-columns: repeat(2, 60px);
   grid-column-gap: 30px;
+  margin-left: 25px;
 }
 .dateToday-Item {
   text-align: center;
@@ -36,13 +37,14 @@
   font-size: 20px;
 }
 .dateDayToday {
+  margin-left: 12px;
   font-size: 15px;
   opacity: 0.4;
   text-transform: uppercase;
 }
 
 .tepmToday-Item {
-  border-left: 1px solid rgb(59, 56, 56);
+  border-left: 1px solid rgba(94, 76, 88, 0.61);
   padding-left: 20px;
   font-size: 40px;
   font-weight: 600;

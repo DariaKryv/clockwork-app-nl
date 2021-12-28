@@ -10,7 +10,7 @@
     rgba(50, 8, 35, 1) 59%,
     rgb(27, 11, 2) 100%
   );
-  padding: 50px 10px 10px 10px;
+  padding: 40px 10px 10px 10px;
 }
 
 .tablo {
@@ -18,18 +18,12 @@
   margin-right: 20%;
   margin-left: 20%;
   padding: 15px;
-  color: rgb(180, 36, 36);
+  color: rgb(229, 226, 226);
   font-size: 25px;
-  font-weight: 300;
-}
-.location {
-  /* opacity: 0; */
+  font-weight: 700;
 }
 .locationImg {
-  margin-left: 10px;
-}
-.locationImg:hover {
-  color: rgb(196, 99, 99);
+  margin-right: 5px;
 }
 .weekWeather {
   justify-content: center;

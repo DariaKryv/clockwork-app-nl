@@ -9,7 +9,7 @@ import Wind from "./Wind.svg";
 
 const weatherIcons = {
   1000: Sun,
-  1001: CloudSun,
+  1001: CloudFog,
   1100: CloudSun,
   1101: CloudSun,
   1102: Cloud,
