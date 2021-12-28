@@ -37,8 +37,8 @@ export default function HomePage() {
   return (
     <div className="weatherApp">
       <h1 className="tablo">
-        {locationName}
         <FaMapMarkerAlt className="locationImg" />
+        {locationName}
       </h1>
       <div className="weatherForToday-container">
         {!today ? (
