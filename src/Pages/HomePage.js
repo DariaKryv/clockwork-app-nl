@@ -8,43 +8,44 @@ import icons from "../icons";
 import geoLocation from "../components/index.js";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
+const LOCATION_API_KEY = process.env.REACT_APP_LOCATION_API_KEY;
 
 export default function HomePage() {
   const [weather, setWeather] = useState([]);
+  const [locationName, setLocationName] = useState("Loading your location");
   const locationHook = geoLocation();
-  const fetchData = async () => {
-    const oneWeekFromNow = dayjs().add(7, "day").toISOString();
-    const response = await axios.get(
-      `https://api.tomorrow.io/v4/timelines?location=${locationHook.coordinates.lat},${locationHook.coordinates.lng}&fields=temperature&fields=precipitationIntensity&fields=weatherCode&fields=precipitationProbability&units=metric&timesteps=1d&endTime=${oneWeekFromNow}&apikey=${API_KEY}`
-    );
-    setWeather(response.data.data.timelines[0].intervals);
-  };
 
   useEffect(() => {
-    fetchData();
+    const fetchWeather = async () => {
+      const oneWeekFromNow = dayjs().add(7, "day").toISOString();
+      const response = await axios.get(
+        `https://api.tomorrow.io/v4/timelines?location=${locationHook.coordinates.lat},${locationHook.coordinates.lng}&fields=temperature&fields=precipitationIntensity&fields=weatherCode&fields=precipitationProbability&units=metric&timesteps=1d&endTime=${oneWeekFromNow}&apikey=${API_KEY}`
+      );
+      setWeather(response.data.data.timelines[0].intervals);
+    };
+    const fetchLocationName = async () => {
+      const response = await axios.get(
+        `https://api.opencagedata.com/geocode/v1/json?key=${LOCATION_API_KEY}&q=${locationHook.coordinates.lat}+${locationHook.coordinates.lng}&pretty=1`
+      );
+      setLocationName(response.data.results[0].components.city);
+    };
+    fetchLocationName();
+    fetchWeather();
   }, [locationHook.coordinates.lat, locationHook.coordinates.lng]);
   const today = weather[0];
 
   return (
     <div className="weatherApp">
       <h1 className="tablo">
-        Weather at your location
+        {locationName}
         <FaMapMarkerAlt className="locationImg" />
       </h1>
-      <p className="location">
-        {locationHook.loaded
-          ? JSON.stringify(locationHook)
-          : "Location data not available yet."}
-      </p>
-
       <div className="weatherForToday-container">
         {!today ? (
           "Loaded"
         ) : (
           <div className="weatherForToday">
-            <img src={icons[today.values.weatherCode]} alt="" />
-
-            {/* {console.log("WEATHER", today.startTime)} */}
+            <img src={icons[today.values.weatherCode]} alt="Weather icon" />
             <div className="dayAndTemp-container">
               <div className="dateToday-Item">
                 <p className="weekDayToday">
@@ -68,7 +69,6 @@ export default function HomePage() {
         {!weather
           ? "Loading"
           : weather.map((weather) => {
-              console.log("weatherCode", weather.values.weatherCode);
               const dayOfTheWeek = dayjs(weather.startTime).format("ddd");
               const date = dayjs(weather.startTime).format("DD/MMM");
               return (
@@ -83,7 +83,7 @@ export default function HomePage() {
                         <img
                           className="temperatureImg"
                           src={icons[weather.values.weatherCode]}
-                          alt=""
+                          alt="weather icon"
                         />
                       </p>
                       <p className="temperature">

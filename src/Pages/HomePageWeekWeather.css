@@ -23,7 +23,7 @@
   font-weight: 300;
 }
 .location {
-  opacity: 0;
+  /* opacity: 0; */
 }
 .locationImg {
   margin-left: 10px;
