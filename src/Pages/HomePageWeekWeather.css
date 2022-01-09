@@ -6,9 +6,9 @@
   font-family: Helvetica, sans-serif;
   background: linear-gradient(
     180deg,
-    rgb(7, 16, 59) 4%,
-    rgba(50, 8, 35, 1) 59%,
-    rgb(27, 11, 2) 100%
+    rgba(7, 2, 10, 1) 0%,
+    rgba(71, 30, 2, 1) 50%,
+    rgb(2, 14, 75) 100%
   );
   padding: 40px 10px 10px 10px;
 }
@@ -18,12 +18,13 @@
   margin-right: 20%;
   margin-left: 20%;
   padding: 15px;
-  color: rgb(229, 226, 226);
+  color: rgb(180, 176, 176);
   font-size: 25px;
-  font-weight: 700;
+  font-weight: 400;
 }
 .locationImg {
   margin-right: 5px;
+  color: rgb(173, 171, 171);
 }
 .weekWeather {
   justify-content: center;
@@ -36,13 +37,13 @@
   grid-template-columns: repeat(3, 100px);
   align-items: center;
   margin-top: 5px;
-  border-bottom: 1px solid rgb(63, 42, 56);
+  border-bottom: 1px solid rgb(255, 255, 255, 0.05);
   color: #fff;
-  font-size: 24px;
+  font-size: 23px;
 }
 .dateTime {
   padding: 5px 10px 5px 10px;
-  font-size: 22px;
+  font-size: 18px;
   text-transform: uppercase;
 }
 .dayOfTheWeek {
@@ -50,11 +51,11 @@
   font-weight: 500;
 }
 .date {
-  font-size: 12px;
+  font-size: 11px;
   opacity: 0.5;
 }
 .tempItem {
-  margin-top: 5px;
+  align-items: center;
   display: grid;
   grid-template-columns: repeat(2, 40px);
 }
@@ -64,17 +65,16 @@
   grid-template-columns: repeat(2, 30px);
 }
 .rain {
-  margin-right: 30px;
+  margin-right: 40px;
 }
 .temperature {
   margin-left: 10px;
-  margin-top: 18px;
 }
 
 .temperatureImg {
+  align-items: center;
   opacity: 0.35;
   margin-top: 6px;
-  padding: 0;
   width: 55px;
 }
 .umbrellaImg {
