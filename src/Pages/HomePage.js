@@ -44,22 +44,24 @@ export default function HomePage() {
         {!today ? (
           "Loaded"
         ) : (
-          <div className="weatherForToday">
-            <img src={icons[today.values.weatherCode]} alt="Weather icon" />
-            <div className="dayAndTemp-container">
-              <div className="dateToday-Item">
-                <p className="weekDayToday">
-                  {dayjs(today.startTime).format("dddd")}
-                </p>
-                <p className="dateDayToday">
-                  {dayjs(today.startTime).format("DD/MMM")}
-                </p>
-              </div>
-              <div className="tepmToday-Item">
-                <p>
-                  {today.values.temperature.toFixed()}
-                  <span>°C</span>
-                </p>
+          <div className="weatherForToday_border">
+            <div className="weatherForToday">
+              <img src={icons[today.values.weatherCode]} alt="Weather icon" />
+              <div className="dayAndTemp-container">
+                <div className="dateToday-Item">
+                  <p className="weekDayToday">
+                    {dayjs(today.startTime).format("dddd")}
+                  </p>
+                  <p className="dateDayToday">
+                    {dayjs(today.startTime).format("MMM,DD")}
+                  </p>
+                </div>
+                <div className="tepmToday-Item">
+                  <p>
+                    {today.values.temperature.toFixed()}
+                    <span>°</span>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -70,7 +72,7 @@ export default function HomePage() {
           ? "Loading"
           : weather.map((weather) => {
               const dayOfTheWeek = dayjs(weather.startTime).format("ddd");
-              const date = dayjs(weather.startTime).format("DD/MMM");
+              const date = dayjs(weather.startTime).format("MMM,DD");
               return (
                 <div className="weatherWall" key={weather.startTime}>
                   <div className="weatherCard">
@@ -87,7 +89,7 @@ export default function HomePage() {
                         />
                       </p>
                       <p className="temperature">
-                        {weather.values.temperature.toFixed()}°C
+                        {weather.values.temperature.toFixed()}°
                       </p>
                     </div>
                     <div className="umbrellaItem">
